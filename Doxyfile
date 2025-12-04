@@ -1,0 +1,144 @@
+# Doxyfile - Dashboard Rack Inteligente
+# Configuração Doxygen para documentação Python do Dashboard
+# EmbarcaTech TIC-27 - 2025
+
+#---------------------------------------------------------------------------
+# Configurações do Projeto
+#---------------------------------------------------------------------------
+
+PROJECT_NAME           = "Dashboard Rack Inteligente"
+PROJECT_NUMBER         = "1.0.0"
+PROJECT_BRIEF          = "Sistema de monitoramento e controle de racks via PyQt5 com IA"
+PROJECT_LOGO           = 
+OUTPUT_DIRECTORY       = ./docs/doxygen
+CREATE_SUBDIRS         = YES
+OUTPUT_LANGUAGE        = Portuguese
+
+#---------------------------------------------------------------------------
+# Configurações de Build
+#---------------------------------------------------------------------------
+
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = YES
+EXTRACT_STATIC         = YES
+EXTRACT_LOCAL_CLASSES  = YES
+EXTRACT_LOCAL_METHODS  = YES
+EXTRACT_ANON_NSPACES   = YES
+
+#---------------------------------------------------------------------------
+# Configurações de Entrada
+#---------------------------------------------------------------------------
+
+INPUT                  = . ./services
+INPUT_ENCODING         = UTF-8
+FILE_PATTERNS          = *.py
+RECURSIVE              = YES
+EXCLUDE                = __pycache__ .venv venv logs Custom_Widgets
+EXCLUDE_PATTERNS       = */__pycache__/* */test_* *_test.py
+
+#---------------------------------------------------------------------------
+# Configurações de Parsing Python
+#---------------------------------------------------------------------------
+
+EXTENSION_MAPPING      = py=Python
+FILTER_PATTERNS        = *.py=doxypypy
+
+# Habilitar suporte a Python via preprocessador
+OPTIMIZE_OUTPUT_JAVA   = NO
+OPTIMIZE_FOR_FORTRAN   = NO
+OPTIMIZE_OUTPUT_VHDL   = NO
+
+#---------------------------------------------------------------------------
+# Configurações de Documentação
+#---------------------------------------------------------------------------
+
+JAVADOC_AUTOBRIEF      = YES
+MULTILINE_CPP_IS_BRIEF = NO
+INHERIT_DOCS           = YES
+SEPARATE_MEMBER_PAGES  = NO
+TAB_SIZE               = 4
+
+# Configurações de Markdown
+MARKDOWN_SUPPORT       = YES
+TOC_INCLUDE_HEADINGS   = 5
+AUTOLINK_SUPPORT       = YES
+BUILTIN_STL_SUPPORT    = NO
+
+#---------------------------------------------------------------------------
+# Configurações de Alertas
+#---------------------------------------------------------------------------
+
+QUIET                  = NO
+WARNINGS               = YES
+WARN_IF_UNDOCUMENTED   = YES
+WARN_IF_DOC_ERROR      = YES
+WARN_NO_PARAMDOC       = NO
+WARN_FORMAT            = "$file:$line: $text"
+
+#---------------------------------------------------------------------------
+# Configurações de Saída HTML
+#---------------------------------------------------------------------------
+
+GENERATE_HTML          = YES
+HTML_OUTPUT            = html
+HTML_FILE_EXTENSION    = .html
+HTML_COLORSTYLE_HUE    = 220
+HTML_COLORSTYLE_SAT    = 100
+HTML_COLORSTYLE_GAMMA  = 80
+HTML_TIMESTAMP         = YES
+HTML_DYNAMIC_MENUS     = YES
+HTML_DYNAMIC_SECTIONS  = YES
+GENERATE_TREEVIEW      = YES
+TREEVIEW_WIDTH         = 250
+SEARCHENGINE           = YES
+SERVER_BASED_SEARCH    = NO
+
+#---------------------------------------------------------------------------
+# Configurações de Saída LaTeX
+#---------------------------------------------------------------------------
+
+GENERATE_LATEX         = NO
+
+#---------------------------------------------------------------------------
+# Configurações de Gráficos
+#---------------------------------------------------------------------------
+
+HAVE_DOT               = YES
+DOT_NUM_THREADS        = 0
+CLASS_GRAPH            = YES
+COLLABORATION_GRAPH    = YES
+GROUP_GRAPHS           = YES
+UML_LOOK               = YES
+UML_LIMIT_NUM_FIELDS   = 10
+DOT_GRAPH_MAX_NODES    = 50
+MAX_DOT_GRAPH_DEPTH    = 0
+DOT_TRANSPARENT        = NO
+DOT_MULTI_TARGETS      = NO
+GENERATE_LEGEND        = YES
+DOT_CLEANUP            = YES
+
+CALL_GRAPH             = YES
+CALLER_GRAPH           = YES
+GRAPHICAL_HIERARCHY    = YES
+DIRECTORY_GRAPH        = YES
+
+#---------------------------------------------------------------------------
+# Configurações Adicionais
+#---------------------------------------------------------------------------
+
+ALPHABETICAL_INDEX     = YES
+GENERATE_TODOLIST      = YES
+GENERATE_TESTLIST      = YES
+GENERATE_BUGLIST       = YES
+GENERATE_DEPRECATEDLIST= YES
+
+# Aliases para documentação
+ALIASES                = "br=<br>"
+ALIASES               += "note=\par Nota:\n"
+ALIASES               += "warning=\par Atenção:\n"
+ALIASES               += "todo=\par TODO:\n"
+
+# Ignorar padrões de código
+ENABLE_PREPROCESSING   = YES
+MACRO_EXPANSION        = NO
+EXPAND_ONLY_PREDEF     = NO

@@ -1,4 +1,49 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Dashboard Rack Inteligente - Aplicação Principal.
+
+Este módulo implementa a interface gráfica principal do sistema de monitoramento
+de racks inteligentes usando PyQt5. Integra comunicação MQTT, previsão de séries
+temporais com IA (IBM Granite TTM-R2 / SARIMA) e controle automatizado via LLM.
+
+Funcionalidades principais:
+    - Monitoramento em tempo real de temperatura e umidade
+    - Visualização de histórico e previsões em gráficos
+    - Controle de porta, ventilação e alarmes via MQTT
+    - Mapa interativo com localização GPS dos racks
+    - Análise AI para decisões automáticas de controle
+    - Persistência de dados em SQLite
+
+Arquitetura:
+    - MainWindow: Janela principal com UI moderna
+    - RackControlService: Gerencia comandos MQTT com ACK
+    - ForecastService: Previsão híbrida (Granite + SARIMA)
+    - ToolCallingService: Decisões AI via Tool Calling
+
+Dependências:
+    - PyQt5: Interface gráfica
+    - paho-mqtt: Comunicação MQTT
+    - Custom_Widgets: Widgets analógicos (gauge)
+    - Services: Serviços de negócio
+
+Autor:
+    EmbarcaTech TIC-27 - Rack Inteligente
+
+Data:
+    2025
+
+Exemplo de uso::
+
+    python app.py
+
+Variáveis de ambiente necessárias:
+    - MQTT_SERVER: Endereço do broker MQTT
+    - MQTT_PORT: Porta do broker (padrão: 1883)
+    - MQTT_USERNAME: Usuário MQTT (opcional)
+    - MQTT_PASSWORD: Senha MQTT (opcional)
+    - MQTT_BASE_TOPIC: Tópico base (padrão: "racks")
+"""
 
 import sys
 import json
@@ -123,6 +168,40 @@ from services.toolCallingService import ToolCallingService
 from services.forecastService import ForecastService
 
 class MainWindow(QMainWindow):
+    """
+    Janela principal do Dashboard de Racks Inteligentes.
+    
+    Esta classe implementa a interface gráfica completa do sistema de monitoramento,
+    incluindo gauges analógicos, gráficos de séries temporais, mapa interativo e
+    controles de atuadores.
+    
+    Attributes:
+        message_received (pyqtSignal): Sinal emitido quando mensagem MQTT é recebida.
+            Parâmetros: dict com 'topic', 'rack_id' e 'payload'.
+        action_executed (pyqtSignal): Sinal emitido quando ação AI é executada.
+            Parâmetros: rackId (str), action (str).
+        status_updated (pyqtSignal): Sinal para atualizar barra de status.
+            Parâmetros: rackId (str), action (str), reason (str).
+        current_rack_id (str): ID do rack atualmente selecionado.
+        currentRack (Rack): Instância do rack selecionado.
+        racks (dict): Dicionário de racks {rackId: Rack}.
+        rack_states (dict): Cache de estados dos racks com telemetria.
+        rackControlService (RackControlService): Serviço de controle MQTT.
+        toolCallingService (ToolCallingService): Serviço de IA para decisões.
+        forecastService (ForecastService): Serviço de previsão de séries temporais.
+    
+    Signals:
+        message_received: Emitido na thread MQTT, processado na thread UI.
+        action_executed: Emitido quando IA executa ação em um rack.
+        status_updated: Emitido para atualizar informações na barra de status.
+    
+    Example:
+        >>> app = QApplication(sys.argv)
+        >>> window = MainWindow()
+        >>> window.show()
+        >>> app.exec_()
+    """
+    
     message_received = pyqtSignal(dict)
     action_executed = pyqtSignal(str, str)  # rackId, action - signal for AI actions
     status_updated = pyqtSignal(str, str, str)  # rackId, action, reason - signal for status bar
