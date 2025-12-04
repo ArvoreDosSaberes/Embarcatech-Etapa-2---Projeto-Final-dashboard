@@ -1,11 +1,11 @@
 # Rack Inteligente Dashboard
 
-![visitors](https://visitor-badge.laobi.icu/badge?page_id=ArvoreDosSaberes.Embarcatech-Etapa-2---Projeto-Final-firmware)
-[![Build](https://img.shields.io/github/actions/workflow/status/ArvoreDosSaberes.Embarcatech-Etapa-2---Projeto-Final-firmware/ci.yml?branch=main)](https://github.com/ArvoreDosSaberes/Embarcatech-Etapa-2---Projeto-Final-firmware/actions)
-[![Issues](https://img.shields.io/github/issues/ArvoreDosSaberes.Embarcatech-Etapa-2---Projeto-Final-firmware)](https://github.com/ArvoreDosSaberes.Embarcatech-Etapa-2---Projeto-Final-firmware/issues)
-[![Stars](https://img.shields.io/github/stars/ArvoreDosSaberes.Embarcatech-Etapa-2---Projeto-Final-firmware)](https://github.com/ArvoreDosSaberes.Embarcatech-Etapa-2---Projeto-Final-firmware/stargazers)
-[![Forks](https://img.shields.io/github/forks/ArvoreDosSaberes.Embarcatech-Etapa-2---Projeto-Final-firmware)](https://github.com/ArvoreDosSaberes.Embarcatech-Etapa-2---Projeto-Final-firmware/network/members)
-[![Language](https://img.shields.io/badge/Language-C%2FC%2B%2B-brightgreen.svg)]()
+![visitors](https://visitor-badge.laobi.icu/badge?page_id=ArvoreDosSaberes.Embarcatech-Etapa-2---Projeto-Final-dashboard)
+[![Build](https://img.shields.io/github/actions/workflow/status/ArvoreDosSaberes/Embarcatech-Etapa-2---Projeto-Final-dashboard/ci.yml?branch=main)](https://github.com/ArvoreDosSaberes/Embarcatech-Etapa-2---Projeto-Final-dashboard/actions)
+[![Issues](https://img.shields.io/github/issues/ArvoreDosSaberes/Embarcatech-Etapa-2---Projeto-Final-dashboard)](https://github.com/ArvoreDosSaberes/Embarcatech-Etapa-2---Projeto-Final-dashboard/issues)
+[![Stars](https://img.shields.io/github/stars/ArvoreDosSaberes/Embarcatech-Etapa-2---Projeto-Final-dashboard)](https://github.com/ArvoreDosSaberes/Embarcatech-Etapa-2---Projeto-Final-dashboard/stargazers)
+[![Forks](https://img.shields.io/github/forks/ArvoreDosSaberes/Embarcatech-Etapa-2---Projeto-Final-dashboard)](https://github.com/ArvoreDosSaberes/Embarcatech-Etapa-2---Projeto-Final-dashboard/network/members)
+[![Language](https://img.shields.io/badge/Language-Python-brightgreen.svg)]()
 [![AI Assisted](https://img.shields.io/badge/AI-Assisted-purple.svg)]()
 [![Python](https://img.shields.io/badge/Python-3.x-blue.svg)](https://www.python.org/)
 [![LLM](https://img.shields.io/badge/LLM-Granite-orange.svg)]()
@@ -13,7 +13,7 @@
 ![C++](https://img.shields.io/badge/C%2B%2B-17-blue)
 ![CMake](https://img.shields.io/badge/CMake-%3E%3D3.16-informational)
 [![Docs](https://img.shields.io/badge/docs-Doxygen-blueviolet)](docs/index.html)
-[![Latest Release](https://img.shields.io/github/v/release/ArvoreDosSaberes/keyboard-menu---workspace?label=version)](https://github.com/ArvoreDosSaberes/keyboard-menu---workspace/releases/latest)
+[![Latest Release](https://img.shields.io/github/v/release/ArvoreDosSaberes/Embarcatech-Etapa-2---Projeto-Final-dashboard?label=version)](https://github.com/ArvoreDosSaberes/Embarcatech-Etapa-2---Projeto-Final-dashboard/releases/latest)
 [![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-success.svg)](#contribuindo)
 
 Dashboard de monitoramento em tempo real para o projeto Rack Inteligente, desenvolvido com PyQt5.
